@@ -10,12 +10,13 @@ class ReposWebview extends StatefulWidget {
   _ReposWebviewState createState() => _ReposWebviewState();
 }
 
-@override
-void initState() {
-  if (Platform.isAndroid) WebView.platform = SurfaceAndroidWebView();
-}
-
 class _ReposWebviewState extends State<ReposWebview> {
+  @override
+  void initState() {
+    super.initState();
+    if (Platform.isAndroid) WebView.platform = SurfaceAndroidWebView();
+  }
+
   @override
   Widget build(BuildContext context) {
     final repUrl = ModalRoute.of(context).settings.arguments;
